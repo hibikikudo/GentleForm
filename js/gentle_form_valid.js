@@ -6,8 +6,8 @@ var toaster = document.querySelector('.toaster');
 new GentleForm('form', function (event, isValid, data) {
   event.preventDefault();
   
-  if (isValid) toast('Yay, the form is valid!', 'success');
-  else toast('Oops, the form is invalid.', 'error');
+  if (isValid) toast('ご登録ありがとうございます！', 'success');
+  else toast('ごめんなさい、未入力の項目があるようです。', 'error');
   
   console.log(event, isValid, data);
 });
