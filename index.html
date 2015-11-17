@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html >
+  <head>
+    <meta charset="UTF-8">
+    <title>GentleForm Demo</title>
+    <link href="http://fonts.googleapis.com/css?family=Francois+One" rel="stylesheet">
+<link href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,700" rel="stylesheet">
+<link href="https://fontastic.s3.amazonaws.com/YKLiEB5nKeTck7NdBGoGKY/icons.css" rel="stylesheet">
+    
+    <link rel="stylesheet" href="css/normalize.css">
+
+    
+        <link rel="stylesheet" href="css/style.css">
+
+    
+    
+    
+  </head>
+
+  <body>
+
+    <div class="toaster" style="display: none;">
+  Yay, the form is valid!
+</div>
+
+<main class="wrapper">
+  <section class="section-form">
+    <h1>GentleForm</h1>
+    <p>
+      Accessible and user-friendly HTML5 form validation library.<br>
+      <a href="https://github.com/Zhouzi/GentleForm" target="_blank">GitHub Repo</a> - <a href="https://twitter.com/home?status=GentleForm%20-%20Accessible%20and%20user-friendly%20HTML5%20form%20validation%20library.%20http%3A%2F%2Fcodepen.io%2FZhouzi%2Ffull%2FQbBzZp%2F%20via%20%40zh0uzi" target="_blank">Tweet!</a>
+    </p>
+
+    <form name="signup" class="form" novalidate>
+      <div class="form-group">
+        <label for="name" class="form-label form-label--required">
+          Name:
+        </label>
+
+        <div class="form-addon" data-states-for="name">
+          <div class="form-addon__addon">
+            <span class="icon-name"></span>
+          </div>
+
+          <input type="text"
+                 id="name"
+                 name="name"
+                 class="form-input"
+                 placeholder="Andrew"
+                 required>
+          
+          <span class="form-addon__icon icon-valid"></span>
+          <span class="form-addon__icon icon-invalid"></span>
+        </div>
+
+        <div data-errors-for="name">
+          <small class="form-error is-hidden"
+                 data-errors-when="valueMissing">
+            This field is required.
+          </small>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="email" class="form-label form-label--required">
+          Email:
+        </label>
+
+        <div class="form-addon" data-states-for="email">
+          <div class="form-addon__addon">
+            <span class="icon-email"></span>
+          </div>
+
+          <input type="email"
+                 id="email"
+                 name="email"
+                 class="form-input"
+                 placeholder="andrew@email.com"
+                 required>
+
+          <span class="form-addon__icon icon-valid"></span>
+          <span class="form-addon__icon icon-invalid"></span>
+        </div>
+
+        <div data-errors-for="email">
+          <small class="form-error is-hidden"
+                 data-errors-when="valueMissing">
+            This field is required.
+          </small>
+          
+          <small class="form-error is-hidden"
+                 data-errors-when="typeMismatch">
+            Please enter a valid email address.
+          </small>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="phone" class="form-label">
+          Phone number:
+        </label>
+
+        <div class="form-addon" data-states-for="phone">
+          <div class="form-addon__addon">
+            <span class="icon-phone"></span>
+          </div>
+
+          <input type="text"
+                 id="phone"
+                 name="phone"
+                 class="form-input"
+                 placeholder="(+12) 345 678"
+                 pattern="^[0-9()+\s]{8,13}$">
+
+          <span class="form-addon__icon icon-valid"></span>
+          <span class="form-addon__icon icon-invalid"></span>
+        </div>
+
+        <div data-errors-for="phone">
+          <small class="form-error is-hidden"
+                 data-errors-when="patternMismatch">
+            Please enter a valid phone number.
+          </small>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="password" class="form-label form-label--required">
+          Password <span class="text-muted">(minimum 6 characters)</span>:
+        </label>
+
+        <div class="form-addon" data-states-for="password">
+          <div class="form-addon__addon">
+            <span class="icon-password"></span>
+          </div>
+
+          <input type="password"
+                 id="password"
+                 name="password"
+                 class="form-input"
+                 placeholder="********"
+                 minlength="6"
+                 required>
+
+          <span class="form-addon__icon icon-valid"></span>
+          <span class="form-addon__icon icon-invalid"></span>
+        </div>
+
+        <div data-errors-for="password">
+          <small class="form-error is-hidden"
+                 data-errors-when="valueMissing">
+            This field is required.
+          </small>
+          
+          <small class="form-error is-hidden"
+                 data-errors-when="tooShort">
+            Your password should be at least 6 characters long.
+          </small>
+        </div>
+      </div>
+
+      <div class="form-footer">
+        <div class="form-footer__message" data-errors-for="signup">
+          <small class="form-error is-hidden"
+                 data-errors-when="invalid">
+            The form contains errors.
+          </small>
+        </div>
+
+        <div class="form-footer__cta">
+          <button type="submit" class="button">Sign up</button>
+        </div>
+      </div>
+    </form>
+  </section>
+</main>
+    <script src='http://gabinaureche.com/GentleForm/dist/GentleForm.min.js'></script>
+
+        <script src="js/index.js"></script>
+
+    
+    
+    
+  </body>
+</html>
